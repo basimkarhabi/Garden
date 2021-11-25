@@ -1,4 +1,89 @@
-.App {
-  text-align: center;
+
+
+.Jumbotron  {
+  background-image: url(https://res.cloudinary.com/diq3wy1pt/image/upload/v1637576808/istockphoto-my-Garten_jnkly7.jpg);
+  background-repeat: no-repeat , repeat;
+  background-position:center ;
+  height: 710px;
+
+ /* background-size: cover; */
+  background-size: cover;
+  font-weight: bold;
 }
 
+.h1Home{
+  background-color: #ffffff73;
+  padding: 10px;
+  margin-bottom: 100px;
+
+}
+
+.homeTittel{
+  position: relative;
+  top: 10%;
+  width: 80%;
+  margin-left: 10%;
+}
+.homeTittel h1 {
+margin-bottom: 398px;
+color: white;
+font-size:70px;
+font-weight: 900;
+text-shadow: 2px 2px 12px #000;
+}
+
+
+.homeTittel p{
+border-radius: 10px;
+padding:20px;
+border : 1px solid #fff
+
+}
+
+.Jumbotron  p{
+  background-color: #ffffff73;
+  
+}
+
+
+.footer{
+  background-color: black;
+  margin:0px auto;
+  padding: 20px 0px 20px 0px;
+  color:#ffffff;
+}
+address{
+  font-size:80%;
+  margin:0px;
+  color:#ffffff;
+}
+ .form-tittle{
+   font-size: 65px;
+   font-weight: 900;
+   color: green;
+ }
+
+ /***************************************************
+ button, input[type="file"]{
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+*/
+::-webkit-file-upload-button{
+  box-shadow: none;
+  border: none;
+  background-color: green;
+  color: white;
+  
+}
+.inputFile{
+  border: 1px solid #aaa;
+
+
+}

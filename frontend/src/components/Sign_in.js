@@ -45,14 +45,19 @@ function Sign_in() {
         // })
     }
     return(
-        <Row>
+        <div className= "container"  style={{width:"50%"}}   >
+        <h3 className="form-tittle mt-5 ">
+        Sign in    
+    </h3>
+
+        <Row className= "mt-5"  >
             <Col>
                 <Form onSubmit={signIn}>
-                <Form.Group controlId="email">
+                <Form.Group controlId="email"  className= "mb-3"   >
                     <Form.Label>Email:</Form.Label>
                     <Form.Control type="email"  onChange={getValue} name="email"/>
                 </Form.Group>
-                <Form.Group controlId="password">
+                <Form.Group controlId="password" className= "mb-4"  >
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" onChange={getValue} name="password"/>
                 </Form.Group>
@@ -62,6 +67,7 @@ function Sign_in() {
                 </Form>
             </Col>
         </Row>
+    </div>
     )
 }
 
