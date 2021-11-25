@@ -1,4 +1,4 @@
-import { Row, Col, Image, Alert, Button, Modal, Form } from "react-bootstrap";
+import { Row, Col, Image, Alert, Button, Modal, Form , Card } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState , useContext } from "react";
 import plantContext from '../context/plant/plantContext';
@@ -79,17 +79,19 @@ function All_plant() {
                 filteredPlants !== null ?
                 filteredPlants.map((item, index)=>{
                     return(
-                        <Col key={item._id}>
-                        <h3>Plant Name: {item.name}</h3>
-                         <h3>Added by: {item.added_by &&  item.added_by.username}</h3>
-                        <Image src={item.plantPic} thumbnail/>
-                        <button type="button" onClick={()=>deletePlant(item._id)}>
-                            Delete
-                        </button>
-                        <button type="button" onClick={()=>detailPlant(item._id)}>
-                            Detail/update
-                        </button>
-                        </Col>
+                        <Card>
+                            <Col key={item._id}>
+                            <h3>Plant Name: {item.name}</h3>
+                            <h3>Added by: {item.added_by &&  item.added_by.username}</h3>
+                            <Image src={item.plantPic} thumbnail/>
+                            <button type="button" onClick={()=>deletePlant(item._id)}>
+                                Delete
+                            </button>
+                            <button type="button" onClick={()=>detailPlant(item._id)}>
+                                Detail/update
+                            </button>
+                            </Col>
+                        </Card>
                     )
                 })
                 :
@@ -97,16 +99,27 @@ function All_plant() {
               plants &&  plants.map((item, index)=>{
                     return(
                         <Col key={item._id}>
-                        <h3>Plant Name: {item.name}</h3>
-                         <h3>Added by: {item.added_by &&  item.added_by.username}</h3>
-                        <Image src={item.plantPic} thumbnail/>
-                        <button type="button" onClick={()=>deletePlant(item._id)}>
-                            Delete
-                        </button>
-                        <button type="button" onClick={()=>detailPlant(item._id)}>
-                            Detail/update
-                        </button>
+                        <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-around align-items-sm-center mt-1 mb-2">
+                            <div className ="card col " style={{width: "20rem" , height:"40rem"}} >
+                            <Image src={item.plantPic} thumbnail  className= "card-img-top pl-1 mt-2" style={{height:"50%",width:"auto"}}  alt={item.name}     />
+
+                            <div class="card-body">
+                            <h5  className= "card-title text-center" style={{color: "blue"}}    >Plant Name: {item.name}</h5>
+                            <h5>Added by: {item.added_by &&  item.added_by.username}</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. </p>
+                            <div class=" mt-5 ms-3  mb-3">
+                            <button type="button" onClick={()=>detailPlant(item._id)}  className="btn btn-outline-primary me-md-2 btn-lg position-relative"  >
+                                Detail/update
+                            </button>
+                            <button type="button" onClick={()=>deletePlant(item._id)}  className ="btn btn-outline-danger me-md-5 mt-2 btn-lg  position-relative"        >
+                                Delete
+                            </button>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
                         </Col>
+  
                     )
                 })
             }

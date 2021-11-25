@@ -55,29 +55,36 @@ function Add_new() {
     }
 
     return(
-        <Row>
-            <Col>
-              <h1>Add New Plant/tree/Herb</h1>
-                {
-                 successMsg != null &&
-                    <Alert variant="success">
-                       {successMsg}
-                    </Alert>
-                }
-                <Form onSubmit={add}>
-                <Form.Group controlId="plantName">
-                    <Form.Label>Plant Name</Form.Label>
-                    <Form.Control type="text" placeholder="What is your plant/trees name?" onChange={getName} name="name"/>
-                </Form.Group>
-                <Form.Group>
-                    <Form.File id="exampleFormControlFile1" label="Upload a Picture" onChange={selectPic} name="plantPic"/>
-                </Form.Group>
-                <Button variant="danger" type="submit">
-                    Add to Garden
-                </Button>
-                </Form>
-            </Col>
-        </Row>
+        <>
+     <div className= "container"  style={{width:"50%"}}  >
+            <h3 className="form-tittle mt-5 ">
+            Add New Plant,tree,Herb....   
+            </h3>
+            <div className="mt-5 mb-5">
+                    {
+                    successMsg != null &&
+                        <Alert variant="success">
+                        {successMsg}
+                        </Alert>
+                    }
+                    <Form onSubmit={add}>
+                    <Form.Group controlId="plantName" className="mb-3"  >
+                        <Form.Label>Plant Name</Form.Label>
+                        <Form.Control type="text" placeholder="What is your plant Trees Name ?" onChange={getName} name="name"/>
+                    </Form.Group>
+
+                    <Form.Group  className="mb-3 inputFile p-1" >
+                        <Form.File id="exampleFormControlFile1" label="Upload a Picture" onChange={selectPic} name="plantPic"/>
+                    </Form.Group>
+                    <Button variant="danger" type="submit">
+                        Add to Garden
+                    </Button>
+                    </Form>
+           
+                </div>
+            </div>
+
+        </>
     )
 }
 

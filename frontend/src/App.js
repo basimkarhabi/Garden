@@ -19,6 +19,7 @@ import AuthState from './context/auth/AuthState';
 import PlantState from './context/plant/PlantState';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer'
+import Home from "./components/Home"
 
 function App() {
   const [token, setToken] = useState(false);
@@ -46,10 +47,10 @@ function App() {
            
               {/* <NavTop/> */}
               <Navbar />
-              <Container>
+         
               <Switch>
                   <Route exact path="/">
-                    <h1>Landing page only</h1>
+                    <Home />
                   </Route>
                   <Route exact path="/dashboard">
                     <Dashboard />
@@ -76,10 +77,11 @@ function App() {
                     <Contactus/>
                   </Route>
               </Switch>
-            </Container>
+           
         </div>
         </Router>
-        <Footer />
+        {/*  <Footer />*/}
+      
     </PlantState>
     </AuthState>
   );

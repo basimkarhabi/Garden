@@ -27,23 +27,33 @@ function Sign_up() {
     return(
         <Row>
             <Col>
-                <Form onSubmit={createUser}>
-                <Form.Group controlId="username">
-                    <Form.Label>UserName</Form.Label>
-                    <Form.Control type="text" onChange={getValue} name="username"/>
-                </Form.Group>
-                <Form.Group controlId="email">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" onChange={getValue} name="email"/>
-                </Form.Group>
-                <Form.Group controlId="password">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" onChange={getValue} name="password"/>
-                </Form.Group>
-                <Button variant="success" type="submit">
-                    Sign Up
-                </Button>
-                </Form>
+            <div className= "container"  style={{width:"50%"}}   >
+            <h3 className="form-tittle mt-5">
+                Sign up     
+            </h3>
+
+                    <Form onSubmit={createUser} className="justify-content-md-center mt-5 "     >
+
+                    <Form.Group controlId="username"className="mb-3"   >
+                        <Form.Label>UserName</Form.Label>
+                        <Form.Control type="text" onChange={getValue} name="username" placeholder="userName"  />
+                    </Form.Group>
+                    <Form.Group controlId="email" className="mb-5"  >
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" onChange={getValue} name="email"placeholder="name@example.com"   />
+                        <Form.Text className="text-muted">      
+                            We'll never share your email with anyone else.
+                        </Form.Text>
+                    </Form.Group>
+                    <Form.Group controlId="password" className="mb-4" >
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" onChange={getValue} name="password" placeholder="Password"  />
+                    </Form.Group>
+                    <Button variant="success" type="submit">
+                        Sign Up
+                    </Button>
+                    </Form>
+                </div>
             </Col>
         </Row>
     )
